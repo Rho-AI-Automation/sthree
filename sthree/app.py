@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify,render_template
+from flask import Flask,request,jsonify,render_template,url_for
 from sthree import return_resource
 
 
@@ -8,6 +8,11 @@ app = Flask(__name__, template_folder='templates')
 def hello_world():
     fname = request.args['surl']
     return jsonify(return_resource(fname))
+
+@app.route('/s3g')
+def s3_gui():
+    return render_template('sthree.html')
+
 
 
 if __name__ == '__main__':
