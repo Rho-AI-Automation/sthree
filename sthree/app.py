@@ -4,6 +4,10 @@ from sthree import return_resource
 
 app = Flask(__name__, template_folder='templates')
 
+@app.route('/')
+def index():
+    return 'shree is working'
+
 @app.route('/s3')
 def hello_world():
     fname = request.args['surl']
@@ -16,4 +20,4 @@ def s3_gui():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',debug=True)
