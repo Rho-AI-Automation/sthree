@@ -38,8 +38,7 @@ def return_resource(filename):
     fdata = None 
     with open(tmp.name,'r',encoding='utf-8') as f:
         fdata = f.read()
-    jdata = json.loads(fdata)
-    return jdata 
+    return fdata
 
 if __name__ == "__main__":
     fname = 's3://rhoaiautomationindias3/kapowautostorerhoaiindia/google-scrape/10162020/575396.json'
